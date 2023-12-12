@@ -35,8 +35,8 @@ const options = {
     },
     servers: [  
       {
-        url: "http://localhost:2000"
-        //url: "https://holiday-planners.onrender.com/"
+       // url: "http://localhost:2000"
+        url: "https://umuzingacrud.onrender.com/"
       }
     ],
     

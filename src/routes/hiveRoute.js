@@ -31,8 +31,8 @@ import { createHive, getAll, getbyId, updateHive, deleteHiveById } from "../hive
 /**
  * @swagger
  * tags:
- *   name: Contacts
- *   description: The contacts managing API
+ *   name: Hive
+ *   description: The hives managing API
  */
 /**
  * @swagger
@@ -45,12 +45,12 @@ import { createHive, getAll, getbyId, updateHive, deleteHiveById } from "../hive
  *     requestBody:
  *          required: true
  *          content:
- *            application/json:
+ *            multipart/form-data:
  *               schema:
- *                   $ref: '#/components/schemas/contacts'
+ *                   $ref: '#/components/schemas/hive'
  *     responses:
  *       201:
- *          description: The new contact data was successfully created
+ *          description: The new hive data was successfully created
  *       500:
  *          description: Internal Server Error
  */
