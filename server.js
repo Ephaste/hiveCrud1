@@ -1,7 +1,8 @@
 import  express  from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
-import mainRouter from "./src/routes";
+//import mainRouter from "./src/routes";
+import mainRouter from "./src/routes/index.js"; 
 
 ///import "dotenv/config";
 import dotenv from "dotenv"
