@@ -36,7 +36,7 @@ const options = {
     },
     servers: [  
       {
-        url: "http://localhost:3000"
+        url: "http://localhost:2000"
         //url: "https://holiday-planners.onrender.com/"
       }
     ],
@@ -65,7 +65,7 @@ app.all('*', (req, res, next) => {
 
 
 console.log(process.env.DB_CONNECTION_DEV);
-mongoose.connect(process.env.DB_CONNECTION_DEV).then((res) =>{
+mongoose.connect(process.env.DB_CONNECTION_PROD).then((res) =>{
     console.log("Database connected");
 });
 app.listen(port, () => {
