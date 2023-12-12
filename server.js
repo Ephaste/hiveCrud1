@@ -30,9 +30,9 @@ const options = {
   swaggerDefinition: {
     openapi : "3.0.0",
     info: {
-      title: "HOLIDAY PLANNERS",
+      title: "HIVE API",
       version :"1.0.0",
-      description: "It is all about holiday planners API documentation using swagger",
+      description: "It is all about Hive  API documentation using swagger",
     },
     servers: [  
       {
@@ -66,8 +66,8 @@ app.all('*', (req, res, next) => {
 
 console.log(process.env.DB_CONNECTION_DEV);
 mongoose.connect(process.env.DB_CONNECTION_PROD).then((res) =>{
-    console.log("Database connected");
+  console.log("Database connected");
 });
 app.listen(port, () => {
-    console.log(`server running at http://localhost:${port}`);
+  console.log(`server running at http://localhost:${port}`);
 });
