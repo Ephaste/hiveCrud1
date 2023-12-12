@@ -1,5 +1,5 @@
 import express from 'express';
-import hiveRouter from './hiveRoute.js';
+import hiveRouter from './hiveRoute';
 
 const mainRouter = express.Router();
 
