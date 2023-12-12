@@ -1,5 +1,5 @@
 
-import { hive } from "../models/hiveModel";
+import { hive } from "../models/hiveModel.js";
   export const  createHive = async(req, res) =>{
     //try{
       let Hive = req.body;

@@ -2,7 +2,9 @@
 import express  from "express";
 const hiveRouter = express.Router();
 
-import { createHive, getAll, getbyId, updateHive,deleteHiveById} from "../hive/hiveCrud";
+//import { createHive, getAll, getbyId, updateHive,deleteHiveById} from "../hive/hiveCrud";
+import { createHive, getAll, getbyId, updateHive, deleteHiveById } from "../hive/hiveCrud.js";
+
 /*
  * @swagger
  * components:

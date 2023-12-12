@@ -1,9 +1,6 @@
 import  express  from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
-//import mainRouter from "./src/routes";
-import mainRouter from './src/routes/index'
-
 ///import "dotenv/config";
 import dotenv from "dotenv"
 dotenv.config();
@@ -11,13 +8,14 @@ import mongoose from "mongoose";
 import morgan from "morgan";
 import swaggerJSDoc from "swagger-jsdoc";
 import swaggerUI from "swagger-ui-express";
+import hiveRouter from "./src/routes/hiveRoute.js";
 
 
 const app =express();
 app.use(bodyParser.json());
 app.use(cors())
 app.use(morgan("dev"))
-app.use('/api/v1',mainRouter);
+app.use('/api/v1/hive',hiveRouter);
 
 
 
