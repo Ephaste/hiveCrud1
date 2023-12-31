@@ -5,17 +5,22 @@ import cors from "cors";
 import dotenv from "dotenv"
 dotenv.config();
 import mongoose from "mongoose";
+//import mainRouter from "./src/routes/index.js";
 import morgan from "morgan";
 import swaggerJSDoc from "swagger-jsdoc";
 import swaggerUI from "swagger-ui-express";
 import hiveRouter from "./src/routes/hiveRoute.js";
+import authRouter from "./src/routes/authenticationRoute.js";
 
 
 const app =express();
 app.use(bodyParser.json());
 app.use(cors())
 app.use(morgan("dev"))
+
+//mainRouter.use('api/v1', mainRouter);
 app.use('/api/v1/hive',hiveRouter);
+app.use('/api/v1/auth', authRouter);
 
 
 
@@ -35,8 +40,10 @@ const options = {
     },
     servers: [  
       {
-       // url: "http://localhost:2000"
-        url: "https://umuzingacrud.onrender.com/"
+        url: "http://localhost:2000/api/v1",
+      },
+      {
+        url: "https://umuzingacrud.onrender.com/api/v1"
       }
     ],
     
@@ -52,14 +59,14 @@ const swaggerDocs = swaggerJSDoc(options);
 app.use("/api-docs",swaggerUI.serve, swaggerUI.setup(specs))
  
 
-app.all('*', (req, res, next) => {
-  if (req.originalUrl.startsWith('/api-docs')) {
-    next(); // Allow requests to /api-docs to proceed
-  }
+// app.all('*', (req, res, next) => {
+//   if (req.originalUrl.startsWith('/api-docs')) {
+//     next(); // Allow requests to /api-docs to proceed
+//   }
   
 
-  next(new appError(`Can't find the ${req.originalUrl} on this server!`, 404));
-});
+//   next(new appError(`Can't find the ${req.originalUrl} on this server!`, 404));
+// });
 
 
 
