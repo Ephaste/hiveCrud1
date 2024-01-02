@@ -1,10 +1,13 @@
 import mongoose from "mongoose";
 const hiveSchema = mongoose.Schema({
-    category: String,
-    owner: String,
-    size: String,
-    mass: String,
-    location: String
 
+    HiveSN : String,
+    HiveName: String,
+    DeviceSN: String,
+    HiveOwner: String,
+    HiveDimension: String,
+    HiveWeight: String,
+    HiveLocation: String,
+    Description: String
 });
 export const hive =mongoose.model("hive", hiveSchema);
