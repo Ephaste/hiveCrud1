@@ -36,7 +36,7 @@ import { createHive, getAll, getbyId, updateHive, deleteHiveById } from "../cont
  */
 /**
  * @swagger
- * hive/create:
+ * /hive/create:
  *   post:
  *     summary: Create a new hive
  *     tags: [Hives]
@@ -45,7 +45,7 @@ import { createHive, getAll, getbyId, updateHive, deleteHiveById } from "../cont
  *     requestBody:
  *          required: true
  *          content:
- *            multipart/form-data:
+ *            application/json:
  *               schema:
  *                   $ref: '#/components/schemas/hive'
  *     responses:
@@ -85,7 +85,7 @@ import { createHive, getAll, getbyId, updateHive, deleteHiveById } from "../cont
  */
 /**
  * @swagger
- * /hive/{id}:
+ * /hive/update/{id}:
  *   put:
  *     summary: Update the hive by ID
  *     tags:
@@ -113,7 +113,7 @@ import { createHive, getAll, getbyId, updateHive, deleteHiveById } from "../cont
  */
 /**
  * @swagger
- * /hive/{id}:
+ * /hive/delete/{id}:
  *   delete:
  *     summary: Remove the contact by ID
  *     tags:
@@ -135,10 +135,10 @@ import { createHive, getAll, getbyId, updateHive, deleteHiveById } from "../cont
 //usersRouter.use(verifyToken);
 hiveRouter.get("/getAll", getAll);
 hiveRouter.post("/create",createHive);
-hiveRouter.delete("/:id",deleteHiveById);
+hiveRouter.delete("/delete/:id",deleteHiveById);
 // studentsRouter.put("/:id",putData);
  hiveRouter.get("/getById/:id", getbyId);
- hiveRouter.patch("/:id",updateHive);
+ hiveRouter.put("/update/:id",updateHive);
 
 export default hiveRouter;
               

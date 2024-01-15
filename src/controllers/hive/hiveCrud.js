@@ -4,15 +4,15 @@
 
 import { hive } from "../../models/hiveModel.js";
   export const  createHive = async(req, res) =>{
-    //try{
+    try{
       let Hive = req.body;
       let newHive = await hive.create(Hive);
         
         console.log(newHive);
         res.status(201).json(newHive);
-    //}catch(error){
-      //res.status(500).json({ error: "Internal server error" });
-    //}
+    }catch(error){
+    res.status(500).json({ error: "Internal server error" });
+    }
   };
   
   
@@ -37,8 +37,8 @@ export const getbyId = async (req, res) => {
         return res.status(404).json({ error: "hive is not found" });
       }
   
-      res.status(200).json(CASE);
-    } catch (error) {
+      res.status(200).json(HIVE);
+   } catch (error) {
       res.status(500).json({ error: "Internal server error" });
     }
   };
@@ -46,7 +46,7 @@ export const getbyId = async (req, res) => {
 
 
   export const updateHive = async (req, res) => {
-    const caseId = req.params.id; // Assuming the ID is passed as a URL parameter
+    const hiveId = req.params.id; // Assuming the ID is passed as a URL parameter
     const updatedData = req.body;
   
     try {
@@ -67,19 +67,19 @@ export const getbyId = async (req, res) => {
       res.status(500).json({ error: "Internal server error" });
     }
   };
-  //DELETE A CASE
+  //DELETE A HIVE
 export const deleteHiveById = async (req, res) => {
-  const caseId = req.params.id; // Assuming the ID is passed as a URL parameter
-
-  try {
+  const hiveId = req.params.id; // Assuming the ID is passed as a URL parameter
+console.log("umuzinga tugiye gusiba",hiveId);
+  //try {
     const deletedHive = await hive.findByIdAndDelete(hiveId);
 
     if (!deletedHive) {
       return res.status(404).json({ error: "Hive not found" });
     }
 
-    res.status(200).json({ message: "Hive deleted successfully", deletedCase });
-  } catch (error) {
-    res.status(500).json({ error: "Internal server error" });
-  }
+    res.status(200).json({ message: "Hive deleted successfully", deletedHive });
+  //} catch (error) {
+    //res.status(500).json({ error: "Internal server error" });
+  //}
 };
