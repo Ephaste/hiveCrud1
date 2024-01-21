@@ -4,7 +4,11 @@ const hiveSchema = mongoose.Schema({
     HiveSN : String,
     HiveName: String,
     DeviceSN: String,
-    HiveOwner: String,
+    HiveOwner: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: false,
+      },
     HiveDimension: String,
     HiveWeight: String,
     HiveLocation: String,
