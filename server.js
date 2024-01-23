@@ -11,6 +11,7 @@ import swaggerJSDoc from "swagger-jsdoc";
 import swaggerUI from "swagger-ui-express";
 import hiveRouter from "./src/routes/hiveRoute.js";
 import authRouter from "./src/routes/authenticationRoute.js";
+import inspectionRouter from "./src/routes/inspectionRoute.js";
 
 
 const app =express();
@@ -21,6 +22,7 @@ app.use(morgan("dev"))
 //mainRouter.use('api/v1', mainRouter);
 app.use('/api/v1/hive',hiveRouter);
 app.use('/api/v1/auth', authRouter);
+app.use('/api/v1/inspection',inspectionRouter);
 
 
 
