@@ -1,9 +1,10 @@
 import  express  from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
-///import "dotenv/config";
+import "dotenv/config";
 import dotenv from "dotenv"
 dotenv.config();
+//require('dotenv').config();
 import mongoose from "mongoose";
 //import mainRouter from "./src/routes/index.js";
 import morgan from "morgan";
